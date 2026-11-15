@@ -1,0 +1,10 @@
+*.bat eol=crlf
+*.sh eol=lf
+# kept in the repo, left out of the release zip
+docs/screenshots/ export-ignore
+docs/civitai-*.md export-ignore
+docs/civitai-*.txt export-ignore
+scripts/shots-demo.mjs export-ignore
+scripts/make-cover.mjs export-ignore
+scripts/make-plain.mjs export-ignore
+scripts/probe-young.mjs export-ignore
