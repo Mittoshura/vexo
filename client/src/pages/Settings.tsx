@@ -105,6 +105,7 @@ export function Settings() {
           <div className="mt-3 mb-6 grid grid-cols-2 gap-2">
             <Toggle k="deviantart.aiGenerated" label="Created using AI tools" sub="Required by DeviantArt for AI images." />
             <Toggle k="deviantart.noai" label="Forbid AI dataset use (noai)" sub="Asks third parties not to use the image to train AI." />
+            <Toggle k="deviantart.watermark" label="Add watermark" sub="DeviantArt stamps your username on the displayed image." />
           </div>
 
           <h2 className="text-[13px] font-extrabold">Auto-tag</h2>

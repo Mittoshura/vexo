@@ -178,6 +178,8 @@ export const deviantart: Adapter = {
         csrf_token: csrf,
       };
       if (nsfw) details.is_mature = true;
+      // Same box as "Add watermark" on DeviantArt's submit page (field name from the public stash/publish API).
+      if (options.watermark === '1') details.add_watermark = true;
       const upd = await call(page, `${BASE}/_napi/shared_api/deviation/update`, { json: details });
       if (upd.status !== 'success') throw Object.assign(new Error('DeviantArt: could not save the details.'), { raw: upd });
 

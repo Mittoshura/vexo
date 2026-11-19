@@ -14,6 +14,7 @@ export const DEFAULTS: Record<string, string> = {
   'pixiv.allowTagEdit': '1',
   'deviantart.aiGenerated': '1', // "Created using AI tools"
   'deviantart.noai': '1', // forbid use in AI datasets
+  'deviantart.watermark': '0', // DeviantArt's own watermark on the displayed image
 };
 
 export function getSetting(key: string): string {

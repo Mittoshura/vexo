@@ -89,7 +89,7 @@ async function runJob(j: JobRow) {
       j.platform === 'pixiv'
         ? { aiType: settings['pixiv.aiType'], restrict: settings['pixiv.restrict'], allowTagEdit: settings['pixiv.allowTagEdit'] }
         : j.platform === 'deviantart'
-          ? { aiGenerated: settings['deviantart.aiGenerated'], noai: settings['deviantart.noai'] }
+          ? { aiGenerated: settings['deviantart.aiGenerated'], noai: settings['deviantart.noai'], watermark: settings['deviantart.watermark'] }
           : {};
     const options: Record<string, string> = { ...defaults, ...JSON.parse(j.options) };
     const detail =
