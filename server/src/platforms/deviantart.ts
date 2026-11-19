@@ -155,13 +155,15 @@ export const deviantart: Adapter = {
       }
 
       const { meta, nsfw, options } = input;
-      log(`Setting details${nsfw ? ' (Mature)' : ''}…`);
+      // DeviantArt only watermarks a resized display copy: 0 (original size) ignores add_watermark.
+      const watermark = options.watermark === '1';
+      log(`Setting details${nsfw ? ' (Mature)' : ''}${watermark ? ' (watermark)' : ''}…`);
       const details: Record<string, unknown> = {
         allow_comments: true,
         allow_free_download: false,
         deviationid: deviationId,
         da_minor_version: DA_VERSION,
-        display_resolution: 0,
+        display_resolution: watermark ? Number(options.displayResolution) || 3 : 0,
         editorRaw: daDocument(meta.description),
         editor_v3: '',
         galleryids: options.folderId ? [options.folderId] : [],
@@ -178,8 +180,7 @@ export const deviantart: Adapter = {
         csrf_token: csrf,
       };
       if (nsfw) details.is_mature = true;
-      // Same box as "Add watermark" on DeviantArt's submit page (field name from the public stash/publish API).
-      if (options.watermark === '1') details.add_watermark = true;
+      if (watermark) details.add_watermark = true; // "Add watermark" box on DeviantArt's submit page
       const upd = await call(page, `${BASE}/_napi/shared_api/deviation/update`, { json: details });
       if (upd.status !== 'success') throw Object.assign(new Error('DeviantArt: could not save the details.'), { raw: upd });
 
