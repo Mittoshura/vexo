@@ -88,8 +88,8 @@ export function Settings() {
 
           <label className="mb-6 flex cursor-pointer items-center justify-between rounded-md border border-line bg-surface p-3">
             <span>
-              <span className="block text-[12.5px] font-bold">Hide the Edge window while posting</span>
-              <span className="block text-[11.5px] text-muted">The window is moved off-screen (headless mode is blocked by Pixiv). Uncheck to see what happens when a post fails.</span>
+              <span className="block text-[12.5px] font-bold">Hide the browser window while posting</span>
+              <span className="block text-[11.5px] text-muted">The window is moved off-screen (headless mode is blocked by Pixiv; not possible on Linux Wayland). Uncheck to see what happens when a post fails.</span>
             </span>
             <input type="checkbox" checked={settings.hideBrowser === '1'} onChange={(e) => save('hideBrowser', e.target.checked ? '1' : '0')} className="h-4 w-4 accent-accent" />
           </label>

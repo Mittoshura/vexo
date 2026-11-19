@@ -3,7 +3,7 @@ import type { Adapter, LoginStatus, PostInput, PostResult } from './types.js';
 import { xText } from '../../../shared/platforms.js';
 import { fail } from './http.js';
 
-// X: drives the real compose form in the logged-in Edge profile (no API keys).
+// X: drives the real compose form in the logged-in browser profile (no API keys).
 // R-18: the CreateTweet request sent by X's own page is patched with `possibly_sensitive: true`.
 const BASE = 'https://x.com';
 

@@ -3,15 +3,15 @@
 ## 1. Install (once)
 
 1. Install Node.js 22 LTS or newer from https://nodejs.org (keep the default options).
-2. Unzip VEXO anywhere, for example `C:\VEXO`.
-3. Double-click `Start.bat`. The first launch installs what it needs (a minute or two), then VEXO opens in your browser at http://127.0.0.1:3210.
+2. Unzip VEXO anywhere, for example `C:\VEXO` (Windows) or `~/vexo` (Linux).
+3. Windows: double-click `Start.bat`. Linux/macOS: open a terminal in the folder and run `./start.sh`. The first launch installs what it needs (a minute or two), then VEXO opens in your browser at http://127.0.0.1:3210.
 
-Keep the black window open while you use VEXO. Close it to stop VEXO.
+Keep the black window (or the terminal) open while you use VEXO. Close it, or press Ctrl+C in the terminal, to stop VEXO.
 
 ## 2. Connect your sites
 
 1. Open **Platforms** in the left menu.
-2. Click **Log in** next to a site. An Edge window opens on that site's login page.
+2. Click **Log in** next to a site. A browser window (Edge, or Chrome/Chromium on Linux) opens on that site's login page.
 3. Log in as usual (2FA included). The window closes by itself once you're in.
 
 Repeat for each site you use. You stay logged in between sessions.
@@ -47,6 +47,6 @@ Posts go out one at a time from the **Queue** page. Each site has its own delay 
 
 ## Good to know
 
-- An Edge window appears while VEXO posts. In **Settings** you can move it off-screen. It can't be fully hidden, because Pixiv blocks invisible browsers.
-- Everything is stored in the `data` folder next to `Start.bat`. Delete that folder to start from scratch.
+- A browser window appears while VEXO posts. In **Settings** you can move it off-screen (not possible on Linux under Wayland). It can't be fully hidden, because Pixiv blocks invisible browsers.
+- Everything is stored in the `data` folder next to `Start.bat` / `start.sh`. Delete that folder to start from scratch.
 - To update VEXO, replace every file except the `data` folder.
