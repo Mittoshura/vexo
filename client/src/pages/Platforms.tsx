@@ -16,7 +16,7 @@ export function Platforms() {
       </header>
       <div className="flex-1 overflow-y-auto p-6">
         <p className="mb-5 max-w-[640px] text-[12.5px] leading-relaxed text-muted">
-          Logging in opens a dedicated VEXO <b className="text-text">Edge</b> window. You log in yourself (username, password, 2FA); VEXO never sees your password, it just reuses the session afterwards.
+          Logging in opens a dedicated VEXO <b className="text-text">browser</b> window (Edge or Chrome). You log in yourself (username, password, 2FA); VEXO never sees your password, it just reuses the session afterwards.
         </p>
         <div className="grid max-w-[900px] grid-cols-2 gap-3">
           {PLATFORMS.map((p) => {
@@ -35,7 +35,7 @@ export function Platforms() {
                         <span className="text-faint">coming soon</span>
                       ) : a.loginInProgress ? (
                         <span className="flex items-center gap-1 text-warn">
-                          <Loader2 size={11} className="animate-spin" /> logging in via Edge…
+                          <Loader2 size={11} className="animate-spin" /> logging in via the browser…
                         </span>
                       ) : a.connected ? (
                         <span className="flex items-center gap-1 text-ok">

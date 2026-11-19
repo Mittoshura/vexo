@@ -93,7 +93,7 @@ export async function check(p: PlatformId) {
   return s;
 }
 
-/** Opens an Edge window on the login page and waits for the user to log in (10 min max). */
+/** Opens a browser window on the login page and waits for the user to log in (10 min max). */
 export function startLogin(p: PlatformId) {
   const a = ADAPTERS[p];
   const s = state.get(p)!;

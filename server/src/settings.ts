@@ -8,7 +8,7 @@ export const DEFAULTS: Record<string, string> = {
   'delay.civitai': '300',
   'delay.x': '900',
   'delay.subscribestar': '600',
-  hideBrowser: '0', // 1 = Edge window off-screen while sending
+  hideBrowser: '0', // 1 = browser window off-screen while sending
   'pixiv.aiType': 'aiGenerated',
   'pixiv.restrict': 'public',
   'pixiv.allowTagEdit': '1',

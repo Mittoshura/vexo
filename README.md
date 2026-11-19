@@ -13,9 +13,17 @@
 
 ## Install
 
+### Windows
 1. Windows 10/11 with Microsoft Edge, and [Node.js](https://nodejs.org) 22.13 or newer.
 2. [Download the zip](../../archive/refs/heads/main.zip) (or `git clone`), unzip anywhere.
 3. Double-click `Start.bat`. The first launch installs dependencies, then VEXO opens at http://127.0.0.1:3210.
+
+### Linux (and macOS)
+1. [Node.js](https://nodejs.org) 22.13 or newer (package manager, [NodeSource](https://github.com/nodesource/distributions) or `nvm`), plus Google Chrome or Microsoft Edge if you have one (recommended: sites like Pixiv trust them more).
+2. `git clone https://github.com/Mittoshura/vexo.git && cd vexo`
+3. `./start.sh`. The first launch installs dependencies (and downloads Playwright's Chromium if neither Chrome nor Edge is installed), then VEXO opens at http://127.0.0.1:3210.
+
+The browser is picked automatically: Edge, then Chrome, then Playwright's Chromium. Force one with `VEXO_BROWSER=chrome ./start.sh` (`msedge`, `chrome` or `chromium`).
 
 New here? Read the **[quick start](docs/quick-start.md)**.
 
@@ -26,8 +34,8 @@ New here? Read the **[quick start](docs/quick-start.md)**.
 ## Run
 | Action | How |
 |---|---|
-| Start | double-click `Start.bat` → opens http://127.0.0.1:3210 |
-| Stop | close the black window |
+| Start | double-click `Start.bat` (Windows) or `./start.sh` (Linux/macOS) → opens http://127.0.0.1:3210 |
+| Stop | close the black window (Windows) or Ctrl+C in the terminal |
 | Dev (hot reload) | `npm run dev` → http://localhost:5173 |
 
 ## Shortcuts
@@ -62,7 +70,7 @@ DeviantArt bans sexual or suggestive art of characters who are **minors in canon
 - **Inspector → Tag sets**: one click adds the set to all selected images; when they all have it (red chip), a click removes it. Dashed chip = only some images have it.
 
 ## Publish
-1. **Platforms** → *Log in* (Pixiv, DeviantArt, Civitai, X, SubscribeStar): an Edge window opens, log in, it closes by itself.
+1. **Platforms** → *Log in* (Pixiv, DeviantArt, Civitai, X, SubscribeStar): a browser window (Edge/Chrome) opens, log in, it closes by itself.
 2. **Library** → select → *Publish* → platform, 1 multi-image post or 1 post per image, now or scheduled, visibility.
 3. **Queue**: posts go out one by one, spaced by the delay set in Settings (10 min by default).
 4. **History**: link to each post, log on failure, *Retry*.
@@ -77,10 +85,10 @@ DeviantArt: pick the gallery folder (or Scraps) in the Publish dialog; up to 10 
 
 The age warning (🔺) also blocks R-18 posts of flagged characters on Civitai, X and SubscribeStar until you tick "I understand the risk".
 
-An Edge window opens while posting (Pixiv blocks invisible mode); you can move it off-screen in Settings.
+A browser window opens while posting (Pixiv blocks invisible mode); you can move it off-screen in Settings. On Linux under Wayland, windows can't be placed off-screen, so it stays visible (minimise it or put it on another workspace).
 
 ## Data
-Everything lives in `data/` (SQLite DB, originals, thumbnails, Edge profile). Delete the folder = start from scratch. Only `data/originals` and `data/thumbs` are served over HTTP.
+Everything lives in `data/` (SQLite DB, originals, thumbnails, browser profile). Delete the folder = start from scratch. Only `data/originals` and `data/thumbs` are served over HTTP.
 
 See `SPEC.md` for decisions and steps.
 
