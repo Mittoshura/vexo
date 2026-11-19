@@ -105,6 +105,13 @@ export function Settings() {
           <div className="mt-3 mb-6 grid grid-cols-2 gap-2">
             <Toggle k="deviantart.aiGenerated" label="Created using AI tools" sub="Required by DeviantArt for AI images." />
             <Toggle k="deviantart.noai" label="Forbid AI dataset use (noai)" sub="Asks third parties not to use the image to train AI." />
+            <Toggle k="deviantart.watermark" label="Add watermark" sub="DeviantArt stamps your username on a resized copy, shown at the size below." />
+            <Select
+              label="Display size (with watermark)"
+              value={settings['deviantart.displayResolution'] ?? '3'}
+              onChange={(v) => save('deviantart.displayResolution', v)}
+              options={[['1', '400 px'], ['2', '600 px'], ['3', '800 px'], ['4', '900 px'], ['5', '1024 px'], ['6', '1280 px'], ['7', '1600 px'], ['8', '1920 px']]}
+            />
           </div>
 
           <h2 className="text-[13px] font-extrabold">Auto-tag</h2>
